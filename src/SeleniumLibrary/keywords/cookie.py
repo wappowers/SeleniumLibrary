@@ -72,7 +72,12 @@ class CookieKeywords(LibraryComponent):
 
         "name" and "value" are required, "path", "domain", "secure" and
          "expiry" are optional.  Expiry supports the same formats as
-         the DateTime library.
+         the [http://robotframework.org/robotframework/latest/libraries/DateTime.html|Datetime]
+         library.  Expiry did not work before SeleniumLibrary 3.0.
+
+        Example:
+        | Add Cookie | cookie_name | 12345 | |
+        | Add Cookie | cookie_name | 12345 | expiry=2027-09-28 16:00:00 |
         """
         new_cookie = {'name': name, 'value': value}
         if is_truthy(path):
